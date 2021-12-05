@@ -395,10 +395,11 @@ class AlgorithmPathfinder(object):
                 'Left click an open spot to create' \
                 ' a wall block.\n' \
                'Hold left CTRL and left click to create a patch that ' \
-               'reduces movement speed to 1/3.\n'
-        text += 'After a pathfinding algorithm has been run, drag the sta' \
-                'rt/end points around to see the visualisation update instantly' \
-                ' for the new path using the algorithm that was last run.\n'
+               'reduces movement speed to 1/3. You can\n' \
+               'also select "(+) Terrain" under Maze Type to ' \
+               'generate random patches.\n'
+        text += 'After a pathfinding algorithm has been run, drag the' \
+                ' start/end points around to see the visualisation update instantly.\n'
         menu_about.add.label(text, font_name=pygame_menu.font.FONT_OPEN_SANS, font_size=14,
                              margin=(0, 5), max_char=-1, padding=0)
         menu_about.add.url('https://github.com/kellyjellykitten/pathfinderalgorithm', 'Source Code',
