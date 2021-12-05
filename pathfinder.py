@@ -401,7 +401,7 @@ class AlgorithmPathfinder(object):
                 ' for the new path using the algorithm that was last run.\n'
         menu_about.add.label(text, font_name=pygame_menu.font.FONT_OPEN_SANS, font_size=14,
                              margin=(0, 5), max_char=-1, padding=0)
-        menu_about.add.url('https://github.com/ChrisKneller/pygame-pathfinder', 'ChrisKneller/pygame-pathfinder',
+        menu_about.add.url('https://github.com/kellyjellykitten/pathfinderalgorithm', 'Source Code',
                            font_name=pygame_menu.font.FONT_OPEN_SANS, font_size=12,
                            font_color='#00bfff')
         menu_about.add.vertical_margin(20)
@@ -1115,69 +1115,6 @@ class AlgorithmPathfinder(object):
 
         mazearray[start_node[0]][start_node[1]].update(is_path=True)
 
-    # def _xfs(self, mazearray: _MazeType, start_point: _Point2, goal_node: _Point2, x: str) -> bool:
-    #     """
-    #     This is a function where you choose x='b' or x='d' to run bfs (breadth-first search) or
-    #     dfs (depth-first search) on your chosen mazearray (grid format), with chosen start_point (x,y)
-    #     and chosen goal_node (x,y).
-    #     :param mazearray: Maze array
-    #     :param start_point: Starting point
-    #     :param goal_node: Ending point
-    #     :param x: Type
-    #     :return: False
-    #     """
-    #     assert x == 'b' or x == 'd', "x should equal 'b' or 'd' to make this bfs or dfs"
-
-    #     # Get the dimensions of the (square) maze
-    #     n = len(mazearray) - 1
-
-    #     # Create the various data structures with speed in mind
-    #     mydeque = deque()
-    #     mydeque.append(start_point)
-    #     visited_nodes = set([])
-    #     path_dict = {start_point: None}
-
-    #     # Main algorithm loop
-    #     while len(mydeque) > 0:
-    #         self._check_esc()
-    #         if x == 'd':
-    #             current_node = mydeque.pop()
-    #         elif x == 'b':
-    #             current_node = mydeque.popleft()
-
-    #         # noinspection PyUnboundLocalVariable
-    #         if current_node == goal_node:
-    #             # Trace back to start using path_dict
-    #             path_node = goal_node
-    #             while True:
-    #                 path_node = path_dict[path_node]
-    #                 mazearray[path_node[0]][path_node[1]].update(is_path=True)
-    #                 self._draw_square(mazearray, path_node[0], path_node[1])
-    #                 if self._visualize:
-    #                     self._update_square(path_node[0], path_node[1])
-    #                 if path_node == start_point:
-    #                     return True
-
-    #         if mazearray[current_node[0]][current_node[1]].nodetype == 'wall':
-    #             continue
-
-    #         if current_node not in visited_nodes:
-    #             visited_nodes.add(current_node)
-    #             mazearray[current_node[0]][current_node[1]].update(is_visited=True)
-    #             self._draw_square(mazearray, current_node[0], current_node[1])
-    #             if self._visualize:
-    #                 self._update_square(current_node[0], current_node[1])
-    #                 self._sleep(0.001)
-
-    #             for neighbour, ntype in self._get_neighbours(current_node, n):
-    #                 mydeque.append(neighbour)
-    #                 # Used for tracing back
-    #                 if neighbour not in visited_nodes:
-    #                     path_dict[neighbour] = current_node
-
-    #     pygame.display.flip()
-    #     return False
-
     def _get_pos(self, pos: _Point2) -> _Point2:
         """
         Return the column/row position within maze.
@@ -1200,9 +1137,6 @@ class AlgorithmPathfinder(object):
 
     @staticmethod
     def _quit() -> None:
-        """
-        Quit app.
-        """
         pygame.quit()
         exit()
 
